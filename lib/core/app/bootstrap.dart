@@ -3,8 +3,8 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
-import 'package:photo_gallery/core/app_config.dart';
-import 'package:photo_gallery/core/injector.dart' as di;
+import 'package:photo_gallery/core/injection/app_config.dart';
+import 'package:photo_gallery/core/injection/injector.dart' as di;
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
