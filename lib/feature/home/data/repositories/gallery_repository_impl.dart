@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:photo_gallery/core/core.dart';
-import 'package:photo_gallery/feature/home/data/models/hit_model.dart';
+import 'package:photo_gallery/feature/home/data/models/gallery_model.dart';
 import 'package:photo_gallery/feature/home/domain/repositories/gallery_repository.dart';
 import 'package:photo_gallery/shared/model/failure.dart';
 import 'package:photo_gallery/shared/model/list_response.dart';
@@ -10,7 +10,7 @@ class GalleryRepositoryImpl implements GalleryRepository {
   final dio = AppService.dio;
 
   @override
-  Future<Either<Failure, ListResponse<HitModel>>> fetchGallery({
+  Future<Either<Failure, ListResponse<GalleryModel>>> fetchGallery({
     required String key,
     required int page,
     String? query,
@@ -24,9 +24,9 @@ class GalleryRepositoryImpl implements GalleryRepository {
       final response = await dio.get('/', queryParameters: params);
 
       return Right(
-        ListResponse<HitModel>.fromJson(
+        ListResponse<GalleryModel>.fromJson(
           response.data,
-          HitModel.fromJson,
+          GalleryModel.fromJson,
         ),
       );
     } on DioException catch (e) {
