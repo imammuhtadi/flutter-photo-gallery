@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'hit_model.freezed.dart';
-part 'hit_model.g.dart';
+part 'gallery_model.freezed.dart';
+part 'gallery_model.g.dart';
 
 @freezed
-class HitModel with _$HitModel {
-  const factory HitModel({
+class GalleryModel with _$GalleryModel {
+  const factory GalleryModel({
     int? id,
     String? pageUrl,
     String? type,
@@ -28,8 +28,8 @@ class HitModel with _$HitModel {
     int? userId,
     String? user,
     String? userImageUrl,
-  }) = _HitModel;
+  }) = _GalleryModel;
 
-  factory HitModel.fromJson(Map<String, dynamic> json) =>
-      _$HitModelFromJson(json);
+  factory GalleryModel.fromJson(Map<String, dynamic> json) =>
+      _$GalleryModelFromJson(json);
 }

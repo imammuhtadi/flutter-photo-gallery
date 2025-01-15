@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'hit_model.dart';
+part of 'gallery_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$HitModelImpl _$$HitModelImplFromJson(Map<String, dynamic> json) =>
-    _$HitModelImpl(
+_$GalleryModelImpl _$$GalleryModelImplFromJson(Map<String, dynamic> json) =>
+    _$GalleryModelImpl(
       id: (json['id'] as num?)?.toInt(),
       pageUrl: json['pageUrl'] as String?,
       type: json['type'] as String?,
@@ -32,7 +32,7 @@ _$HitModelImpl _$$HitModelImplFromJson(Map<String, dynamic> json) =>
       userImageUrl: json['userImageUrl'] as String?,
     );
 
-Map<String, dynamic> _$$HitModelImplToJson(_$HitModelImpl instance) =>
+Map<String, dynamic> _$$GalleryModelImplToJson(_$GalleryModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'pageUrl': instance.pageUrl,

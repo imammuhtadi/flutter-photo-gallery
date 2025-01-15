@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'hit_model.dart';
+part of 'gallery_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-HitModel _$HitModelFromJson(Map<String, dynamic> json) {
-  return _HitModel.fromJson(json);
+GalleryModel _$GalleryModelFromJson(Map<String, dynamic> json) {
+  return _GalleryModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$HitModel {
+mixin _$GalleryModel {
   int? get id => throw _privateConstructorUsedError;
   String? get pageUrl => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
@@ -43,20 +43,21 @@ mixin _$HitModel {
   String? get user => throw _privateConstructorUsedError;
   String? get userImageUrl => throw _privateConstructorUsedError;
 
-  /// Serializes this HitModel to a JSON map.
+  /// Serializes this GalleryModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of HitModel
+  /// Create a copy of GalleryModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $HitModelCopyWith<HitModel> get copyWith =>
+  $GalleryModelCopyWith<GalleryModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HitModelCopyWith<$Res> {
-  factory $HitModelCopyWith(HitModel value, $Res Function(HitModel) then) =
-      _$HitModelCopyWithImpl<$Res, HitModel>;
+abstract class $GalleryModelCopyWith<$Res> {
+  factory $GalleryModelCopyWith(
+          GalleryModel value, $Res Function(GalleryModel) then) =
+      _$GalleryModelCopyWithImpl<$Res, GalleryModel>;
   @useResult
   $Res call(
       {int? id,
@@ -84,16 +85,16 @@ abstract class $HitModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HitModelCopyWithImpl<$Res, $Val extends HitModel>
-    implements $HitModelCopyWith<$Res> {
-  _$HitModelCopyWithImpl(this._value, this._then);
+class _$GalleryModelCopyWithImpl<$Res, $Val extends GalleryModel>
+    implements $GalleryModelCopyWith<$Res> {
+  _$GalleryModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of HitModel
+  /// Create a copy of GalleryModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -215,11 +216,11 @@ class _$HitModelCopyWithImpl<$Res, $Val extends HitModel>
 }
 
 /// @nodoc
-abstract class _$$HitModelImplCopyWith<$Res>
-    implements $HitModelCopyWith<$Res> {
-  factory _$$HitModelImplCopyWith(
-          _$HitModelImpl value, $Res Function(_$HitModelImpl) then) =
-      __$$HitModelImplCopyWithImpl<$Res>;
+abstract class _$$GalleryModelImplCopyWith<$Res>
+    implements $GalleryModelCopyWith<$Res> {
+  factory _$$GalleryModelImplCopyWith(
+          _$GalleryModelImpl value, $Res Function(_$GalleryModelImpl) then) =
+      __$$GalleryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -248,14 +249,14 @@ abstract class _$$HitModelImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$HitModelImplCopyWithImpl<$Res>
-    extends _$HitModelCopyWithImpl<$Res, _$HitModelImpl>
-    implements _$$HitModelImplCopyWith<$Res> {
-  __$$HitModelImplCopyWithImpl(
-      _$HitModelImpl _value, $Res Function(_$HitModelImpl) _then)
+class __$$GalleryModelImplCopyWithImpl<$Res>
+    extends _$GalleryModelCopyWithImpl<$Res, _$GalleryModelImpl>
+    implements _$$GalleryModelImplCopyWith<$Res> {
+  __$$GalleryModelImplCopyWithImpl(
+      _$GalleryModelImpl _value, $Res Function(_$GalleryModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HitModel
+  /// Create a copy of GalleryModel
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -283,7 +284,7 @@ class __$$HitModelImplCopyWithImpl<$Res>
     Object? user = freezed,
     Object? userImageUrl = freezed,
   }) {
-    return _then(_$HitModelImpl(
+    return _then(_$GalleryModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -378,8 +379,8 @@ class __$$HitModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HitModelImpl implements _HitModel {
-  const _$HitModelImpl(
+class _$GalleryModelImpl implements _GalleryModel {
+  const _$GalleryModelImpl(
       {this.id,
       this.pageUrl,
       this.type,
@@ -403,8 +404,8 @@ class _$HitModelImpl implements _HitModel {
       this.user,
       this.userImageUrl});
 
-  factory _$HitModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HitModelImplFromJson(json);
+  factory _$GalleryModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GalleryModelImplFromJson(json);
 
   @override
   final int? id;
@@ -453,14 +454,14 @@ class _$HitModelImpl implements _HitModel {
 
   @override
   String toString() {
-    return 'HitModel(id: $id, pageUrl: $pageUrl, type: $type, tags: $tags, previewUrl: $previewUrl, previewWidth: $previewWidth, previewHeight: $previewHeight, webformatUrl: $webformatUrl, webformatWidth: $webformatWidth, webformatHeight: $webformatHeight, largeImageUrl: $largeImageUrl, imageWidth: $imageWidth, imageHeight: $imageHeight, imageSize: $imageSize, views: $views, downloads: $downloads, collections: $collections, likes: $likes, comments: $comments, userId: $userId, user: $user, userImageUrl: $userImageUrl)';
+    return 'GalleryModel(id: $id, pageUrl: $pageUrl, type: $type, tags: $tags, previewUrl: $previewUrl, previewWidth: $previewWidth, previewHeight: $previewHeight, webformatUrl: $webformatUrl, webformatWidth: $webformatWidth, webformatHeight: $webformatHeight, largeImageUrl: $largeImageUrl, imageWidth: $imageWidth, imageHeight: $imageHeight, imageSize: $imageSize, views: $views, downloads: $downloads, collections: $collections, likes: $likes, comments: $comments, userId: $userId, user: $user, userImageUrl: $userImageUrl)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HitModelImpl &&
+            other is _$GalleryModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.pageUrl, pageUrl) || other.pageUrl == pageUrl) &&
             (identical(other.type, type) || other.type == type) &&
@@ -527,24 +528,24 @@ class _$HitModelImpl implements _HitModel {
         userImageUrl
       ]);
 
-  /// Create a copy of HitModel
+  /// Create a copy of GalleryModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HitModelImplCopyWith<_$HitModelImpl> get copyWith =>
-      __$$HitModelImplCopyWithImpl<_$HitModelImpl>(this, _$identity);
+  _$$GalleryModelImplCopyWith<_$GalleryModelImpl> get copyWith =>
+      __$$GalleryModelImplCopyWithImpl<_$GalleryModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$HitModelImplToJson(
+    return _$$GalleryModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _HitModel implements HitModel {
-  const factory _HitModel(
+abstract class _GalleryModel implements GalleryModel {
+  const factory _GalleryModel(
       {final int? id,
       final String? pageUrl,
       final String? type,
@@ -566,10 +567,10 @@ abstract class _HitModel implements HitModel {
       final int? comments,
       final int? userId,
       final String? user,
-      final String? userImageUrl}) = _$HitModelImpl;
+      final String? userImageUrl}) = _$GalleryModelImpl;
 
-  factory _HitModel.fromJson(Map<String, dynamic> json) =
-      _$HitModelImpl.fromJson;
+  factory _GalleryModel.fromJson(Map<String, dynamic> json) =
+      _$GalleryModelImpl.fromJson;
 
   @override
   int? get id;
@@ -616,10 +617,10 @@ abstract class _HitModel implements HitModel {
   @override
   String? get userImageUrl;
 
-  /// Create a copy of HitModel
+  /// Create a copy of GalleryModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HitModelImplCopyWith<_$HitModelImpl> get copyWith =>
+  _$$GalleryModelImplCopyWith<_$GalleryModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
