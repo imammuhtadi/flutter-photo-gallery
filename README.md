@@ -1,4 +1,6 @@
-# Photo Gallery
+# Flutter Photo Gallery
+
+Flutter Photo Gallery is a Flutter application that fetches and displays a collection of images from the Pixabay API ([API Documentation](https://pixabay.com/api/docs/)). Support for different build flavors (Development, Staging, Production).
 
 ## Prerequisites
 
