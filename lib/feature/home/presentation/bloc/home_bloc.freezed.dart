@@ -16,23 +16,21 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeEvent {
+  String? get query => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(String? query) fetchGallery,
     required TResult Function(String? query) loadMoreGallery,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(String? query)? fetchGallery,
     TResult? Function(String? query)? loadMoreGallery,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(String? query)? fetchGallery,
     TResult Function(String? query)? loadMoreGallery,
     required TResult orElse(),
@@ -40,25 +38,28 @@ mixin _$HomeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_FetchGallery value) fetchGallery,
     required TResult Function(_LoadMoreGallery value) loadMoreGallery,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_FetchGallery value)? fetchGallery,
     TResult? Function(_LoadMoreGallery value)? loadMoreGallery,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_FetchGallery value)? fetchGallery,
     TResult Function(_LoadMoreGallery value)? loadMoreGallery,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  /// Create a copy of HomeEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $HomeEventCopyWith<HomeEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -66,6 +67,8 @@ mixin _$HomeEvent {
 abstract class $HomeEventCopyWith<$Res> {
   factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
       _$HomeEventCopyWithImpl<$Res, HomeEvent>;
+  @useResult
+  $Res call({String? query});
 }
 
 /// @nodoc
@@ -80,124 +83,27 @@ class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? query = freezed,
+  }) {
+    return _then(_value.copyWith(
+      query: freezed == query
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$StartedImplCopyWith<$Res> {
-  factory _$$StartedImplCopyWith(
-          _$StartedImpl value, $Res Function(_$StartedImpl) then) =
-      __$$StartedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$StartedImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$StartedImpl>
-    implements _$$StartedImplCopyWith<$Res> {
-  __$$StartedImplCopyWithImpl(
-      _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HomeEvent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$StartedImpl implements _Started {
-  const _$StartedImpl();
-
-  @override
-  String toString() {
-    return 'HomeEvent.started()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$StartedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String? query) fetchGallery,
-    required TResult Function(String? query) loadMoreGallery,
-  }) {
-    return started();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String? query)? fetchGallery,
-    TResult? Function(String? query)? loadMoreGallery,
-  }) {
-    return started?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String? query)? fetchGallery,
-    TResult Function(String? query)? loadMoreGallery,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_FetchGallery value) fetchGallery,
-    required TResult Function(_LoadMoreGallery value) loadMoreGallery,
-  }) {
-    return started(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_FetchGallery value)? fetchGallery,
-    TResult? Function(_LoadMoreGallery value)? loadMoreGallery,
-  }) {
-    return started?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_FetchGallery value)? fetchGallery,
-    TResult Function(_LoadMoreGallery value)? loadMoreGallery,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Started implements HomeEvent {
-  const factory _Started() = _$StartedImpl;
-}
-
-/// @nodoc
-abstract class _$$FetchGalleryImplCopyWith<$Res> {
+abstract class _$$FetchGalleryImplCopyWith<$Res>
+    implements $HomeEventCopyWith<$Res> {
   factory _$$FetchGalleryImplCopyWith(
           _$FetchGalleryImpl value, $Res Function(_$FetchGalleryImpl) then) =
       __$$FetchGalleryImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String? query});
 }
@@ -261,7 +167,6 @@ class _$FetchGalleryImpl implements _FetchGallery {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(String? query) fetchGallery,
     required TResult Function(String? query) loadMoreGallery,
   }) {
@@ -271,7 +176,6 @@ class _$FetchGalleryImpl implements _FetchGallery {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(String? query)? fetchGallery,
     TResult? Function(String? query)? loadMoreGallery,
   }) {
@@ -281,7 +185,6 @@ class _$FetchGalleryImpl implements _FetchGallery {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(String? query)? fetchGallery,
     TResult Function(String? query)? loadMoreGallery,
     required TResult orElse(),
@@ -295,7 +198,6 @@ class _$FetchGalleryImpl implements _FetchGallery {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_FetchGallery value) fetchGallery,
     required TResult Function(_LoadMoreGallery value) loadMoreGallery,
   }) {
@@ -305,7 +207,6 @@ class _$FetchGalleryImpl implements _FetchGallery {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_FetchGallery value)? fetchGallery,
     TResult? Function(_LoadMoreGallery value)? loadMoreGallery,
   }) {
@@ -315,7 +216,6 @@ class _$FetchGalleryImpl implements _FetchGallery {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_FetchGallery value)? fetchGallery,
     TResult Function(_LoadMoreGallery value)? loadMoreGallery,
     required TResult orElse(),
@@ -330,20 +230,24 @@ class _$FetchGalleryImpl implements _FetchGallery {
 abstract class _FetchGallery implements HomeEvent {
   const factory _FetchGallery({final String? query}) = _$FetchGalleryImpl;
 
+  @override
   String? get query;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchGalleryImplCopyWith<_$FetchGalleryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadMoreGalleryImplCopyWith<$Res> {
+abstract class _$$LoadMoreGalleryImplCopyWith<$Res>
+    implements $HomeEventCopyWith<$Res> {
   factory _$$LoadMoreGalleryImplCopyWith(_$LoadMoreGalleryImpl value,
           $Res Function(_$LoadMoreGalleryImpl) then) =
       __$$LoadMoreGalleryImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call({String? query});
 }
@@ -408,7 +312,6 @@ class _$LoadMoreGalleryImpl implements _LoadMoreGallery {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(String? query) fetchGallery,
     required TResult Function(String? query) loadMoreGallery,
   }) {
@@ -418,7 +321,6 @@ class _$LoadMoreGalleryImpl implements _LoadMoreGallery {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(String? query)? fetchGallery,
     TResult? Function(String? query)? loadMoreGallery,
   }) {
@@ -428,7 +330,6 @@ class _$LoadMoreGalleryImpl implements _LoadMoreGallery {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(String? query)? fetchGallery,
     TResult Function(String? query)? loadMoreGallery,
     required TResult orElse(),
@@ -442,7 +343,6 @@ class _$LoadMoreGalleryImpl implements _LoadMoreGallery {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_FetchGallery value) fetchGallery,
     required TResult Function(_LoadMoreGallery value) loadMoreGallery,
   }) {
@@ -452,7 +352,6 @@ class _$LoadMoreGalleryImpl implements _LoadMoreGallery {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_FetchGallery value)? fetchGallery,
     TResult? Function(_LoadMoreGallery value)? loadMoreGallery,
   }) {
@@ -462,7 +361,6 @@ class _$LoadMoreGalleryImpl implements _LoadMoreGallery {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_FetchGallery value)? fetchGallery,
     TResult Function(_LoadMoreGallery value)? loadMoreGallery,
     required TResult orElse(),
@@ -477,10 +375,12 @@ class _$LoadMoreGalleryImpl implements _LoadMoreGallery {
 abstract class _LoadMoreGallery implements HomeEvent {
   const factory _LoadMoreGallery({final String? query}) = _$LoadMoreGalleryImpl;
 
+  @override
   String? get query;
 
   /// Create a copy of HomeEvent
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadMoreGalleryImplCopyWith<_$LoadMoreGalleryImpl> get copyWith =>
       throw _privateConstructorUsedError;

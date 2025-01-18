@@ -9,10 +9,9 @@ class GetGallery {
   GetGallery({required this.galleryRepository});
 
   Future<Either<Failure, ListResponse<GalleryModel>>> call({
-    required String key,
     required int page,
     String? query,
   }) async {
-    return galleryRepository.fetchGallery(key: key, page: page, query: query);
+    return galleryRepository.fetchGallery(page: page, query: query);
   }
 }

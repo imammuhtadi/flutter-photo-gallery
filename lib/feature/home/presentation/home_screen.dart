@@ -23,9 +23,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    _scrollController.addListener(_onScroll);
     homeBloc = HomeBloc(GetGallery(galleryRepository: GalleryRepositoryImpl()));
     homeBloc.add(const HomeEvent.fetchGallery());
-    _scrollController.addListener(_onScroll);
   }
 
   @override

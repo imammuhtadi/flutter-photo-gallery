@@ -12,10 +12,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final int _itemsPerPage = 20;
 
   HomeBloc(this.getGallery) : super(const _Initial()) {
-    on<_Started>((event, emit) {
-      add(const HomeEvent.fetchGallery());
-    });
-
     on<_FetchGallery>(_onFetchGallery);
     on<_LoadMoreGallery>(_onLoadMoreGallery);
   }
@@ -26,7 +22,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     emit(const _Loading());
     final res = await getGallery(
-      key: '48206312-c39b45e8012adcb49660b587e',
       page: 1,
       query: event.query,
     );
@@ -53,7 +48,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       final nextPage = currentState.currentPage + 1;
       final res = await getGallery(
-        key: '48206312-c39b45e8012adcb49660b587e',
         page: nextPage,
         query: event.query,
       );

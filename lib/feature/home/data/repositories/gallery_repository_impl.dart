@@ -10,13 +10,12 @@ class GalleryRepositoryImpl implements GalleryRepository {
 
   @override
   Future<Either<Failure, ListResponse<GalleryModel>>> fetchGallery({
-    required String key,
     required int page,
     String? query,
   }) async {
     try {
       final params = <String, dynamic>{};
-      params['key'] = key;
+      params['key'] = AppService.config.pixabayKey;
       params['page'] = page;
       if (query != null) params['q'] = query;
 

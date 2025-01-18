@@ -5,7 +5,6 @@ import 'package:photo_gallery/feature/home/home.dart';
 
 abstract class GalleryRepository {
   Future<Either<Failure, ListResponse<GalleryModel>>> fetchGallery({
-    required String key,
     required int page,
     String? query,
   });
