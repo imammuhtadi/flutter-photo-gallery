@@ -1,6 +1,10 @@
-import 'package:photo_gallery/app/app.dart';
-import 'package:photo_gallery/bootstrap.dart';
+import 'package:photo_gallery/core/core.dart';
 
 void main() {
-  bootstrap(() => const App());
+  final appConfig = AppConfig(
+    title: 'Photo Gallery',
+    flavor: Flavor.dev,
+    baseUrl: 'https://pixabay.com/api/',
+  );
+  bootstrap(appConfig, () => const App());
 }
