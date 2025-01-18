@@ -55,6 +55,9 @@ class GalleryItem extends StatelessWidget {
                       item?.userImageURL ?? '',
                       width: 36,
                       height: 36,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Center(child: Icon(Icons.error));
+                      },
                     ),
                   ),
                   SizedBox(width: 12),

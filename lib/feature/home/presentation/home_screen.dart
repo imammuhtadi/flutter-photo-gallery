@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,6 +16,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late HomeBloc homeBloc;
   final ScrollController _scrollController = ScrollController();
+  final TextEditingController _searchController = TextEditingController();
+
+  Timer? _debounce;
 
   @override
   void initState() {
@@ -26,6 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _searchController.dispose();
+    _debounce?.cancel();
     super.dispose();
   }
 
@@ -34,10 +41,30 @@ class _HomeScreenState extends State<HomeScreen> {
       homeBloc.state.whenOrNull(
           fetchGallerySuccess: (_, __, hasReachedMax, isLoadMore) {
         if (!hasReachedMax && !isLoadMore) {
-          homeBloc.add(const HomeEvent.loadMoreGallery());
+          homeBloc.add(
+            HomeEvent.loadMoreGallery(
+              query: _searchController.text.isNotEmpty
+                  ? _searchController.text
+                  : null,
+            ),
+          );
         }
       });
     }
+  }
+
+  void _onSearch(String query) {
+    if (_debounce?.isActive ?? false) _debounce?.cancel();
+    _debounce = Timer(const Duration(milliseconds: 300), () async {
+      homeBloc.state.maybeWhen(
+        loading: () {},
+        orElse: () {
+          homeBloc.add(
+            HomeEvent.fetchGallery(query: query.isNotEmpty ? query : null),
+          );
+        },
+      );
+    });
   }
 
   bool get _isBottom {
@@ -54,6 +81,20 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Photo Gallery'),
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(50),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: TextField(
+                onChanged: _onSearch,
+                controller: _searchController,
+                decoration: const InputDecoration(
+                  hintText: 'Search...',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ),
+          ),
         ),
         body: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {

@@ -28,6 +28,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     final res = await getGallery(
       key: '48206312-c39b45e8012adcb49660b587e',
       page: 1,
+      query: event.query,
     );
     res.fold(
       (failure) => emit(_FetchGalleryFailure(failure: failure)),
@@ -54,6 +55,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       final res = await getGallery(
         key: '48206312-c39b45e8012adcb49660b587e',
         page: nextPage,
+        query: event.query,
       );
 
       res.fold(
