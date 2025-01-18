@@ -9,10 +9,6 @@ Flutter Photo Gallery is a Flutter application that fetches and displays a colle
    ```bash
    flutter pub get
    ```
-3. Install the `build_runner` package for code generation:
-   ```bash
-   make generator
-   ```
 
 ---
 
