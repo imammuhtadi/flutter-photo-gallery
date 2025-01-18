@@ -21,16 +21,16 @@ GalleryModel _$GalleryModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GalleryModel {
   int? get id => throw _privateConstructorUsedError;
-  String? get pageUrl => throw _privateConstructorUsedError;
+  String? get pageURL => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   String? get tags => throw _privateConstructorUsedError;
-  String? get previewUrl => throw _privateConstructorUsedError;
+  String? get previewURL => throw _privateConstructorUsedError;
   int? get previewWidth => throw _privateConstructorUsedError;
   int? get previewHeight => throw _privateConstructorUsedError;
-  String? get webformatUrl => throw _privateConstructorUsedError;
+  String? get webformatURL => throw _privateConstructorUsedError;
   int? get webformatWidth => throw _privateConstructorUsedError;
   int? get webformatHeight => throw _privateConstructorUsedError;
-  String? get largeImageUrl => throw _privateConstructorUsedError;
+  String? get largeImageURL => throw _privateConstructorUsedError;
   int? get imageWidth => throw _privateConstructorUsedError;
   int? get imageHeight => throw _privateConstructorUsedError;
   int? get imageSize => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ mixin _$GalleryModel {
   int? get comments => throw _privateConstructorUsedError;
   int? get userId => throw _privateConstructorUsedError;
   String? get user => throw _privateConstructorUsedError;
-  String? get userImageUrl => throw _privateConstructorUsedError;
+  String? get userImageURL => throw _privateConstructorUsedError;
 
   /// Serializes this GalleryModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -61,16 +61,16 @@ abstract class $GalleryModelCopyWith<$Res> {
   @useResult
   $Res call(
       {int? id,
-      String? pageUrl,
+      String? pageURL,
       String? type,
       String? tags,
-      String? previewUrl,
+      String? previewURL,
       int? previewWidth,
       int? previewHeight,
-      String? webformatUrl,
+      String? webformatURL,
       int? webformatWidth,
       int? webformatHeight,
-      String? largeImageUrl,
+      String? largeImageURL,
       int? imageWidth,
       int? imageHeight,
       int? imageSize,
@@ -81,7 +81,7 @@ abstract class $GalleryModelCopyWith<$Res> {
       int? comments,
       int? userId,
       String? user,
-      String? userImageUrl});
+      String? userImageURL});
 }
 
 /// @nodoc
@@ -100,16 +100,16 @@ class _$GalleryModelCopyWithImpl<$Res, $Val extends GalleryModel>
   @override
   $Res call({
     Object? id = freezed,
-    Object? pageUrl = freezed,
+    Object? pageURL = freezed,
     Object? type = freezed,
     Object? tags = freezed,
-    Object? previewUrl = freezed,
+    Object? previewURL = freezed,
     Object? previewWidth = freezed,
     Object? previewHeight = freezed,
-    Object? webformatUrl = freezed,
+    Object? webformatURL = freezed,
     Object? webformatWidth = freezed,
     Object? webformatHeight = freezed,
-    Object? largeImageUrl = freezed,
+    Object? largeImageURL = freezed,
     Object? imageWidth = freezed,
     Object? imageHeight = freezed,
     Object? imageSize = freezed,
@@ -120,16 +120,16 @@ class _$GalleryModelCopyWithImpl<$Res, $Val extends GalleryModel>
     Object? comments = freezed,
     Object? userId = freezed,
     Object? user = freezed,
-    Object? userImageUrl = freezed,
+    Object? userImageURL = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      pageUrl: freezed == pageUrl
-          ? _value.pageUrl
-          : pageUrl // ignore: cast_nullable_to_non_nullable
+      pageURL: freezed == pageURL
+          ? _value.pageURL
+          : pageURL // ignore: cast_nullable_to_non_nullable
               as String?,
       type: freezed == type
           ? _value.type
@@ -139,9 +139,9 @@ class _$GalleryModelCopyWithImpl<$Res, $Val extends GalleryModel>
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as String?,
-      previewUrl: freezed == previewUrl
-          ? _value.previewUrl
-          : previewUrl // ignore: cast_nullable_to_non_nullable
+      previewURL: freezed == previewURL
+          ? _value.previewURL
+          : previewURL // ignore: cast_nullable_to_non_nullable
               as String?,
       previewWidth: freezed == previewWidth
           ? _value.previewWidth
@@ -151,9 +151,9 @@ class _$GalleryModelCopyWithImpl<$Res, $Val extends GalleryModel>
           ? _value.previewHeight
           : previewHeight // ignore: cast_nullable_to_non_nullable
               as int?,
-      webformatUrl: freezed == webformatUrl
-          ? _value.webformatUrl
-          : webformatUrl // ignore: cast_nullable_to_non_nullable
+      webformatURL: freezed == webformatURL
+          ? _value.webformatURL
+          : webformatURL // ignore: cast_nullable_to_non_nullable
               as String?,
       webformatWidth: freezed == webformatWidth
           ? _value.webformatWidth
@@ -163,9 +163,9 @@ class _$GalleryModelCopyWithImpl<$Res, $Val extends GalleryModel>
           ? _value.webformatHeight
           : webformatHeight // ignore: cast_nullable_to_non_nullable
               as int?,
-      largeImageUrl: freezed == largeImageUrl
-          ? _value.largeImageUrl
-          : largeImageUrl // ignore: cast_nullable_to_non_nullable
+      largeImageURL: freezed == largeImageURL
+          ? _value.largeImageURL
+          : largeImageURL // ignore: cast_nullable_to_non_nullable
               as String?,
       imageWidth: freezed == imageWidth
           ? _value.imageWidth
@@ -207,9 +207,9 @@ class _$GalleryModelCopyWithImpl<$Res, $Val extends GalleryModel>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as String?,
-      userImageUrl: freezed == userImageUrl
-          ? _value.userImageUrl
-          : userImageUrl // ignore: cast_nullable_to_non_nullable
+      userImageURL: freezed == userImageURL
+          ? _value.userImageURL
+          : userImageURL // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -225,16 +225,16 @@ abstract class _$$GalleryModelImplCopyWith<$Res>
   @useResult
   $Res call(
       {int? id,
-      String? pageUrl,
+      String? pageURL,
       String? type,
       String? tags,
-      String? previewUrl,
+      String? previewURL,
       int? previewWidth,
       int? previewHeight,
-      String? webformatUrl,
+      String? webformatURL,
       int? webformatWidth,
       int? webformatHeight,
-      String? largeImageUrl,
+      String? largeImageURL,
       int? imageWidth,
       int? imageHeight,
       int? imageSize,
@@ -245,7 +245,7 @@ abstract class _$$GalleryModelImplCopyWith<$Res>
       int? comments,
       int? userId,
       String? user,
-      String? userImageUrl});
+      String? userImageURL});
 }
 
 /// @nodoc
@@ -262,16 +262,16 @@ class __$$GalleryModelImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? pageUrl = freezed,
+    Object? pageURL = freezed,
     Object? type = freezed,
     Object? tags = freezed,
-    Object? previewUrl = freezed,
+    Object? previewURL = freezed,
     Object? previewWidth = freezed,
     Object? previewHeight = freezed,
-    Object? webformatUrl = freezed,
+    Object? webformatURL = freezed,
     Object? webformatWidth = freezed,
     Object? webformatHeight = freezed,
-    Object? largeImageUrl = freezed,
+    Object? largeImageURL = freezed,
     Object? imageWidth = freezed,
     Object? imageHeight = freezed,
     Object? imageSize = freezed,
@@ -282,16 +282,16 @@ class __$$GalleryModelImplCopyWithImpl<$Res>
     Object? comments = freezed,
     Object? userId = freezed,
     Object? user = freezed,
-    Object? userImageUrl = freezed,
+    Object? userImageURL = freezed,
   }) {
     return _then(_$GalleryModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      pageUrl: freezed == pageUrl
-          ? _value.pageUrl
-          : pageUrl // ignore: cast_nullable_to_non_nullable
+      pageURL: freezed == pageURL
+          ? _value.pageURL
+          : pageURL // ignore: cast_nullable_to_non_nullable
               as String?,
       type: freezed == type
           ? _value.type
@@ -301,9 +301,9 @@ class __$$GalleryModelImplCopyWithImpl<$Res>
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as String?,
-      previewUrl: freezed == previewUrl
-          ? _value.previewUrl
-          : previewUrl // ignore: cast_nullable_to_non_nullable
+      previewURL: freezed == previewURL
+          ? _value.previewURL
+          : previewURL // ignore: cast_nullable_to_non_nullable
               as String?,
       previewWidth: freezed == previewWidth
           ? _value.previewWidth
@@ -313,9 +313,9 @@ class __$$GalleryModelImplCopyWithImpl<$Res>
           ? _value.previewHeight
           : previewHeight // ignore: cast_nullable_to_non_nullable
               as int?,
-      webformatUrl: freezed == webformatUrl
-          ? _value.webformatUrl
-          : webformatUrl // ignore: cast_nullable_to_non_nullable
+      webformatURL: freezed == webformatURL
+          ? _value.webformatURL
+          : webformatURL // ignore: cast_nullable_to_non_nullable
               as String?,
       webformatWidth: freezed == webformatWidth
           ? _value.webformatWidth
@@ -325,9 +325,9 @@ class __$$GalleryModelImplCopyWithImpl<$Res>
           ? _value.webformatHeight
           : webformatHeight // ignore: cast_nullable_to_non_nullable
               as int?,
-      largeImageUrl: freezed == largeImageUrl
-          ? _value.largeImageUrl
-          : largeImageUrl // ignore: cast_nullable_to_non_nullable
+      largeImageURL: freezed == largeImageURL
+          ? _value.largeImageURL
+          : largeImageURL // ignore: cast_nullable_to_non_nullable
               as String?,
       imageWidth: freezed == imageWidth
           ? _value.imageWidth
@@ -369,9 +369,9 @@ class __$$GalleryModelImplCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as String?,
-      userImageUrl: freezed == userImageUrl
-          ? _value.userImageUrl
-          : userImageUrl // ignore: cast_nullable_to_non_nullable
+      userImageURL: freezed == userImageURL
+          ? _value.userImageURL
+          : userImageURL // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -382,16 +382,16 @@ class __$$GalleryModelImplCopyWithImpl<$Res>
 class _$GalleryModelImpl implements _GalleryModel {
   const _$GalleryModelImpl(
       {this.id,
-      this.pageUrl,
+      this.pageURL,
       this.type,
       this.tags,
-      this.previewUrl,
+      this.previewURL,
       this.previewWidth,
       this.previewHeight,
-      this.webformatUrl,
+      this.webformatURL,
       this.webformatWidth,
       this.webformatHeight,
-      this.largeImageUrl,
+      this.largeImageURL,
       this.imageWidth,
       this.imageHeight,
       this.imageSize,
@@ -402,7 +402,7 @@ class _$GalleryModelImpl implements _GalleryModel {
       this.comments,
       this.userId,
       this.user,
-      this.userImageUrl});
+      this.userImageURL});
 
   factory _$GalleryModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$GalleryModelImplFromJson(json);
@@ -410,25 +410,25 @@ class _$GalleryModelImpl implements _GalleryModel {
   @override
   final int? id;
   @override
-  final String? pageUrl;
+  final String? pageURL;
   @override
   final String? type;
   @override
   final String? tags;
   @override
-  final String? previewUrl;
+  final String? previewURL;
   @override
   final int? previewWidth;
   @override
   final int? previewHeight;
   @override
-  final String? webformatUrl;
+  final String? webformatURL;
   @override
   final int? webformatWidth;
   @override
   final int? webformatHeight;
   @override
-  final String? largeImageUrl;
+  final String? largeImageURL;
   @override
   final int? imageWidth;
   @override
@@ -450,11 +450,11 @@ class _$GalleryModelImpl implements _GalleryModel {
   @override
   final String? user;
   @override
-  final String? userImageUrl;
+  final String? userImageURL;
 
   @override
   String toString() {
-    return 'GalleryModel(id: $id, pageUrl: $pageUrl, type: $type, tags: $tags, previewUrl: $previewUrl, previewWidth: $previewWidth, previewHeight: $previewHeight, webformatUrl: $webformatUrl, webformatWidth: $webformatWidth, webformatHeight: $webformatHeight, largeImageUrl: $largeImageUrl, imageWidth: $imageWidth, imageHeight: $imageHeight, imageSize: $imageSize, views: $views, downloads: $downloads, collections: $collections, likes: $likes, comments: $comments, userId: $userId, user: $user, userImageUrl: $userImageUrl)';
+    return 'GalleryModel(id: $id, pageURL: $pageURL, type: $type, tags: $tags, previewURL: $previewURL, previewWidth: $previewWidth, previewHeight: $previewHeight, webformatURL: $webformatURL, webformatWidth: $webformatWidth, webformatHeight: $webformatHeight, largeImageURL: $largeImageURL, imageWidth: $imageWidth, imageHeight: $imageHeight, imageSize: $imageSize, views: $views, downloads: $downloads, collections: $collections, likes: $likes, comments: $comments, userId: $userId, user: $user, userImageURL: $userImageURL)';
   }
 
   @override
@@ -463,23 +463,23 @@ class _$GalleryModelImpl implements _GalleryModel {
         (other.runtimeType == runtimeType &&
             other is _$GalleryModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.pageUrl, pageUrl) || other.pageUrl == pageUrl) &&
+            (identical(other.pageURL, pageURL) || other.pageURL == pageURL) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.tags, tags) || other.tags == tags) &&
-            (identical(other.previewUrl, previewUrl) ||
-                other.previewUrl == previewUrl) &&
+            (identical(other.previewURL, previewURL) ||
+                other.previewURL == previewURL) &&
             (identical(other.previewWidth, previewWidth) ||
                 other.previewWidth == previewWidth) &&
             (identical(other.previewHeight, previewHeight) ||
                 other.previewHeight == previewHeight) &&
-            (identical(other.webformatUrl, webformatUrl) ||
-                other.webformatUrl == webformatUrl) &&
+            (identical(other.webformatURL, webformatURL) ||
+                other.webformatURL == webformatURL) &&
             (identical(other.webformatWidth, webformatWidth) ||
                 other.webformatWidth == webformatWidth) &&
             (identical(other.webformatHeight, webformatHeight) ||
                 other.webformatHeight == webformatHeight) &&
-            (identical(other.largeImageUrl, largeImageUrl) ||
-                other.largeImageUrl == largeImageUrl) &&
+            (identical(other.largeImageURL, largeImageURL) ||
+                other.largeImageURL == largeImageURL) &&
             (identical(other.imageWidth, imageWidth) ||
                 other.imageWidth == imageWidth) &&
             (identical(other.imageHeight, imageHeight) ||
@@ -496,8 +496,8 @@ class _$GalleryModelImpl implements _GalleryModel {
                 other.comments == comments) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.userImageUrl, userImageUrl) ||
-                other.userImageUrl == userImageUrl));
+            (identical(other.userImageURL, userImageURL) ||
+                other.userImageURL == userImageURL));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -505,16 +505,16 @@ class _$GalleryModelImpl implements _GalleryModel {
   int get hashCode => Object.hashAll([
         runtimeType,
         id,
-        pageUrl,
+        pageURL,
         type,
         tags,
-        previewUrl,
+        previewURL,
         previewWidth,
         previewHeight,
-        webformatUrl,
+        webformatURL,
         webformatWidth,
         webformatHeight,
-        largeImageUrl,
+        largeImageURL,
         imageWidth,
         imageHeight,
         imageSize,
@@ -525,7 +525,7 @@ class _$GalleryModelImpl implements _GalleryModel {
         comments,
         userId,
         user,
-        userImageUrl
+        userImageURL
       ]);
 
   /// Create a copy of GalleryModel
@@ -547,16 +547,16 @@ class _$GalleryModelImpl implements _GalleryModel {
 abstract class _GalleryModel implements GalleryModel {
   const factory _GalleryModel(
       {final int? id,
-      final String? pageUrl,
+      final String? pageURL,
       final String? type,
       final String? tags,
-      final String? previewUrl,
+      final String? previewURL,
       final int? previewWidth,
       final int? previewHeight,
-      final String? webformatUrl,
+      final String? webformatURL,
       final int? webformatWidth,
       final int? webformatHeight,
-      final String? largeImageUrl,
+      final String? largeImageURL,
       final int? imageWidth,
       final int? imageHeight,
       final int? imageSize,
@@ -567,7 +567,7 @@ abstract class _GalleryModel implements GalleryModel {
       final int? comments,
       final int? userId,
       final String? user,
-      final String? userImageUrl}) = _$GalleryModelImpl;
+      final String? userImageURL}) = _$GalleryModelImpl;
 
   factory _GalleryModel.fromJson(Map<String, dynamic> json) =
       _$GalleryModelImpl.fromJson;
@@ -575,25 +575,25 @@ abstract class _GalleryModel implements GalleryModel {
   @override
   int? get id;
   @override
-  String? get pageUrl;
+  String? get pageURL;
   @override
   String? get type;
   @override
   String? get tags;
   @override
-  String? get previewUrl;
+  String? get previewURL;
   @override
   int? get previewWidth;
   @override
   int? get previewHeight;
   @override
-  String? get webformatUrl;
+  String? get webformatURL;
   @override
   int? get webformatWidth;
   @override
   int? get webformatHeight;
   @override
-  String? get largeImageUrl;
+  String? get largeImageURL;
   @override
   int? get imageWidth;
   @override
@@ -615,7 +615,7 @@ abstract class _GalleryModel implements GalleryModel {
   @override
   String? get user;
   @override
-  String? get userImageUrl;
+  String? get userImageURL;
 
   /// Create a copy of GalleryModel
   /// with the given fields replaced by the non-null parameter values.

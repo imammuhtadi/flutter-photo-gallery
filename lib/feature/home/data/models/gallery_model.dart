@@ -7,16 +7,16 @@ part 'gallery_model.g.dart';
 class GalleryModel with _$GalleryModel {
   const factory GalleryModel({
     int? id,
-    String? pageUrl,
+    String? pageURL,
     String? type,
     String? tags,
-    String? previewUrl,
+    String? previewURL,
     int? previewWidth,
     int? previewHeight,
-    String? webformatUrl,
+    String? webformatURL,
     int? webformatWidth,
     int? webformatHeight,
-    String? largeImageUrl,
+    String? largeImageURL,
     int? imageWidth,
     int? imageHeight,
     int? imageSize,
@@ -27,7 +27,7 @@ class GalleryModel with _$GalleryModel {
     int? comments,
     int? userId,
     String? user,
-    String? userImageUrl,
+    String? userImageURL,
   }) = _GalleryModel;
 
   factory GalleryModel.fromJson(Map<String, dynamic> json) =>
