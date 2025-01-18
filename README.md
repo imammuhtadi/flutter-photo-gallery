@@ -100,4 +100,4 @@ To build IPA files for deployment on the Apple App Store:
 
 Ensure that your macOS environment is set up for iOS development, including Xcode and necessary provisioning profiles.
 
-Happy Coding! 🚀
+---
