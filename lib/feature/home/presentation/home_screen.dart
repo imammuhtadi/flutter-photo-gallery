@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:photo_gallery/feature/home/home.dart';
+import 'package:photo_gallery/feature/home/presentation/gallery_detail_screen.dart';
 
 @RoutePage()
 class HomeScreen extends StatefulWidget {
@@ -116,6 +117,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       final item = gallery![index];
                       return GalleryItem(
                         item: item,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => GalleryDetailScreen(
+                                galleryItem: item,
+                              ),
+                            ),
+                          );
+                        },
                         isLoadMore: isLoadMore,
                         isLastItem: item == gallery.last,
                       );
