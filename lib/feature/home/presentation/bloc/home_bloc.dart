@@ -1,8 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:photo_gallery/feature/home/data/models/gallery_model.dart';
-import 'package:photo_gallery/feature/home/domain/usecases/get_gallery.dart';
 import 'package:photo_gallery/shared/model/failure.dart';
+import 'package:photo_gallery/feature/home/home.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
@@ -36,6 +35,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         gallery: result.data,
         currentPage: 1,
         hasReachedMax: (result.data ?? []).length < _itemsPerPage,
+        isLoadMore: false,
       )),
     );
   }
@@ -48,6 +48,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     if (currentState is _FetchGallerySuccess) {
       if (currentState.hasReachedMax) return;
 
+      emit(currentState.copyWith(isLoadMore: true));
+
       final nextPage = currentState.currentPage + 1;
       final res = await getGallery(
         key: '48206312-c39b45e8012adcb49660b587e',
@@ -57,7 +59,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       res.fold(
         (failure) => emit(_FetchGalleryFailure(failure: failure)),
         (result) {
-          final newGallery = [
+          List<GalleryModel> newGallery = [
             ...currentState.gallery ?? [],
             ...result.data ?? []
           ];
@@ -65,6 +67,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             gallery: newGallery,
             currentPage: nextPage,
             hasReachedMax: (result.data ?? []).length < _itemsPerPage,
+            isLoadMore: false,
           ));
         },
       );

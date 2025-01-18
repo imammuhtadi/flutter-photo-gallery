@@ -1,10 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:photo_gallery/core/core.dart';
-import 'package:photo_gallery/feature/home/data/models/gallery_model.dart';
-import 'package:photo_gallery/feature/home/domain/repositories/gallery_repository.dart';
 import 'package:photo_gallery/shared/model/failure.dart';
 import 'package:photo_gallery/shared/model/list_response.dart';
+import 'package:photo_gallery/feature/home/home.dart';
 
 class GalleryRepositoryImpl implements GalleryRepository {
   final dio = AppService.dio;
@@ -16,7 +15,7 @@ class GalleryRepositoryImpl implements GalleryRepository {
     String? query,
   }) async {
     try {
-      Map<String, dynamic> params = {};
+      final params = <String, dynamic>{};
       params['key'] = key;
       params['page'] = page;
       if (query != null) params['q'] = query;

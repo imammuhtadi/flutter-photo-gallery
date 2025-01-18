@@ -421,8 +421,8 @@ mixin _$HomeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)
+    required TResult Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)
         fetchGallerySuccess,
     required TResult Function(Failure failure) fetchGalleryFailure,
   }) =>
@@ -431,8 +431,8 @@ mixin _$HomeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)?
+    TResult? Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)?
         fetchGallerySuccess,
     TResult? Function(Failure failure)? fetchGalleryFailure,
   }) =>
@@ -441,8 +441,8 @@ mixin _$HomeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)?
+    TResult Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)?
         fetchGallerySuccess,
     TResult Function(Failure failure)? fetchGalleryFailure,
     required TResult orElse(),
@@ -538,8 +538,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)
+    required TResult Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)
         fetchGallerySuccess,
     required TResult Function(Failure failure) fetchGalleryFailure,
   }) {
@@ -551,8 +551,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)?
+    TResult? Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)?
         fetchGallerySuccess,
     TResult? Function(Failure failure)? fetchGalleryFailure,
   }) {
@@ -564,8 +564,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)?
+    TResult Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)?
         fetchGallerySuccess,
     TResult Function(Failure failure)? fetchGalleryFailure,
     required TResult orElse(),
@@ -661,8 +661,8 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)
+    required TResult Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)
         fetchGallerySuccess,
     required TResult Function(Failure failure) fetchGalleryFailure,
   }) {
@@ -674,8 +674,8 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)?
+    TResult? Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)?
         fetchGallerySuccess,
     TResult? Function(Failure failure)? fetchGalleryFailure,
   }) {
@@ -687,8 +687,8 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)?
+    TResult Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)?
         fetchGallerySuccess,
     TResult Function(Failure failure)? fetchGalleryFailure,
     required TResult orElse(),
@@ -747,7 +747,11 @@ abstract class _$$FetchGallerySuccessImplCopyWith<$Res> {
           $Res Function(_$FetchGallerySuccessImpl) then) =
       __$$FetchGallerySuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<GalleryModel>? gallery, int currentPage, bool hasReachedMax});
+  $Res call(
+      {List<GalleryModel>? gallery,
+      int currentPage,
+      bool hasReachedMax,
+      bool isLoadMore});
 }
 
 /// @nodoc
@@ -766,6 +770,7 @@ class __$$FetchGallerySuccessImplCopyWithImpl<$Res>
     Object? gallery = freezed,
     Object? currentPage = null,
     Object? hasReachedMax = null,
+    Object? isLoadMore = null,
   }) {
     return _then(_$FetchGallerySuccessImpl(
       gallery: freezed == gallery
@@ -780,6 +785,10 @@ class __$$FetchGallerySuccessImplCopyWithImpl<$Res>
           ? _value.hasReachedMax
           : hasReachedMax // ignore: cast_nullable_to_non_nullable
               as bool,
+      isLoadMore: null == isLoadMore
+          ? _value.isLoadMore
+          : isLoadMore // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -790,7 +799,8 @@ class _$FetchGallerySuccessImpl implements _FetchGallerySuccess {
   const _$FetchGallerySuccessImpl(
       {required final List<GalleryModel>? gallery,
       required this.currentPage,
-      required this.hasReachedMax})
+      required this.hasReachedMax,
+      required this.isLoadMore})
       : _gallery = gallery;
 
   final List<GalleryModel>? _gallery;
@@ -807,10 +817,12 @@ class _$FetchGallerySuccessImpl implements _FetchGallerySuccess {
   final int currentPage;
   @override
   final bool hasReachedMax;
+  @override
+  final bool isLoadMore;
 
   @override
   String toString() {
-    return 'HomeState.fetchGallerySuccess(gallery: $gallery, currentPage: $currentPage, hasReachedMax: $hasReachedMax)';
+    return 'HomeState.fetchGallerySuccess(gallery: $gallery, currentPage: $currentPage, hasReachedMax: $hasReachedMax, isLoadMore: $isLoadMore)';
   }
 
   @override
@@ -822,7 +834,9 @@ class _$FetchGallerySuccessImpl implements _FetchGallerySuccess {
             (identical(other.currentPage, currentPage) ||
                 other.currentPage == currentPage) &&
             (identical(other.hasReachedMax, hasReachedMax) ||
-                other.hasReachedMax == hasReachedMax));
+                other.hasReachedMax == hasReachedMax) &&
+            (identical(other.isLoadMore, isLoadMore) ||
+                other.isLoadMore == isLoadMore));
   }
 
   @override
@@ -830,7 +844,8 @@ class _$FetchGallerySuccessImpl implements _FetchGallerySuccess {
       runtimeType,
       const DeepCollectionEquality().hash(_gallery),
       currentPage,
-      hasReachedMax);
+      hasReachedMax,
+      isLoadMore);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -846,12 +861,12 @@ class _$FetchGallerySuccessImpl implements _FetchGallerySuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)
+    required TResult Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)
         fetchGallerySuccess,
     required TResult Function(Failure failure) fetchGalleryFailure,
   }) {
-    return fetchGallerySuccess(gallery, currentPage, hasReachedMax);
+    return fetchGallerySuccess(gallery, currentPage, hasReachedMax, isLoadMore);
   }
 
   @override
@@ -859,12 +874,13 @@ class _$FetchGallerySuccessImpl implements _FetchGallerySuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)?
+    TResult? Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)?
         fetchGallerySuccess,
     TResult? Function(Failure failure)? fetchGalleryFailure,
   }) {
-    return fetchGallerySuccess?.call(gallery, currentPage, hasReachedMax);
+    return fetchGallerySuccess?.call(
+        gallery, currentPage, hasReachedMax, isLoadMore);
   }
 
   @override
@@ -872,14 +888,15 @@ class _$FetchGallerySuccessImpl implements _FetchGallerySuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)?
+    TResult Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)?
         fetchGallerySuccess,
     TResult Function(Failure failure)? fetchGalleryFailure,
     required TResult orElse(),
   }) {
     if (fetchGallerySuccess != null) {
-      return fetchGallerySuccess(gallery, currentPage, hasReachedMax);
+      return fetchGallerySuccess(
+          gallery, currentPage, hasReachedMax, isLoadMore);
     }
     return orElse();
   }
@@ -926,11 +943,13 @@ abstract class _FetchGallerySuccess implements HomeState {
   const factory _FetchGallerySuccess(
       {required final List<GalleryModel>? gallery,
       required final int currentPage,
-      required final bool hasReachedMax}) = _$FetchGallerySuccessImpl;
+      required final bool hasReachedMax,
+      required final bool isLoadMore}) = _$FetchGallerySuccessImpl;
 
   List<GalleryModel>? get gallery;
   int get currentPage;
   bool get hasReachedMax;
+  bool get isLoadMore;
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
@@ -1010,8 +1029,8 @@ class _$FetchGalleryFailureImpl implements _FetchGalleryFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)
+    required TResult Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)
         fetchGallerySuccess,
     required TResult Function(Failure failure) fetchGalleryFailure,
   }) {
@@ -1023,8 +1042,8 @@ class _$FetchGalleryFailureImpl implements _FetchGalleryFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)?
+    TResult? Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)?
         fetchGallerySuccess,
     TResult? Function(Failure failure)? fetchGalleryFailure,
   }) {
@@ -1036,8 +1055,8 @@ class _$FetchGalleryFailureImpl implements _FetchGalleryFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-            List<GalleryModel>? gallery, int currentPage, bool hasReachedMax)?
+    TResult Function(List<GalleryModel>? gallery, int currentPage,
+            bool hasReachedMax, bool isLoadMore)?
         fetchGallerySuccess,
     TResult Function(Failure failure)? fetchGalleryFailure,
     required TResult orElse(),

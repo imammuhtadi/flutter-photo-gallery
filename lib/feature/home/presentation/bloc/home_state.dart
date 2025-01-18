@@ -10,6 +10,7 @@ class HomeState with _$HomeState {
     required List<GalleryModel>? gallery,
     required int currentPage,
     required bool hasReachedMax,
+    required bool isLoadMore,
   }) = _FetchGallerySuccess;
 
   const factory HomeState.fetchGalleryFailure({
