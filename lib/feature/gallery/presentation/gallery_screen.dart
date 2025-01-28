@@ -14,10 +14,9 @@ class GalleryScreen extends StatefulWidget {
 }
 
 class _GalleryScreenState extends State<GalleryScreen> {
-  late HomeBloc homeBloc;
+  late final HomeBloc homeBloc;
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _searchController = TextEditingController();
-
   Timer? _debounce;
 
   @override
@@ -38,32 +37,14 @@ class _GalleryScreenState extends State<GalleryScreen> {
 
   void _onScroll() {
     if (_isBottom) {
-      homeBloc.state.whenOrNull(
-          fetchGallerySuccess: (_, __, hasReachedMax, isLoadMore) {
-        if (!hasReachedMax && !isLoadMore) {
-          homeBloc.add(
-            HomeEvent.loadMoreGallery(
-              query: _searchController.text.isNotEmpty
-                  ? _searchController.text
-                  : null,
-            ),
-          );
-        }
-      });
+      homeBloc.add(HomeEvent.loadMoreGallery(query: _searchController.text));
     }
   }
 
   void _onSearch(String query) {
     if (_debounce?.isActive ?? false) _debounce?.cancel();
-    _debounce = Timer(const Duration(milliseconds: 300), () async {
-      homeBloc.state.maybeWhen(
-        loading: () {},
-        orElse: () {
-          homeBloc.add(
-            HomeEvent.fetchGallery(query: query.isNotEmpty ? query : null),
-          );
-        },
-      );
+    _debounce = Timer(const Duration(milliseconds: 300), () {
+      homeBloc.add(HomeEvent.fetchGallery(query: query));
     });
   }
 
@@ -117,7 +98,6 @@ class _GalleryScreenState extends State<GalleryScreen> {
                       return GalleryItem(
                         item: item,
                         onTap: () {
-                          // AppService.router.push()
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -134,8 +114,22 @@ class _GalleryScreenState extends State<GalleryScreen> {
                   ),
                 );
               },
-              fetchGalleryFailure: (failure) =>
-                  Center(child: Text('Error: ${failure.message}')),
+              fetchGalleryFailure: (failure) => Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Error: ${failure.message}'),
+                    ElevatedButton(
+                      onPressed: () {
+                        context
+                            .read<HomeBloc>()
+                            .add(const HomeEvent.fetchGallery());
+                      },
+                      child: const Text('Retry'),
+                    ),
+                  ],
+                ),
+              ),
             );
           },
         ),

@@ -20,10 +20,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     _FetchGallery event,
     Emitter<HomeState> emit,
   ) async {
+    if (state is _Loading) return;
+
     emit(const _Loading());
     final res = await getGallery(
       page: 1,
-      query: event.query,
+      query: (event.query ?? '').isNotEmpty ? event.query : null,
     );
     res.fold(
       (failure) => emit(_FetchGalleryFailure(failure: failure)),
@@ -41,32 +43,34 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Emitter<HomeState> emit,
   ) async {
     final currentState = state;
-    if (currentState is _FetchGallerySuccess) {
-      if (currentState.hasReachedMax) return;
+    if (currentState is! _FetchGallerySuccess) return;
 
-      emit(currentState.copyWith(isLoadMore: true));
+    if (currentState.hasReachedMax) return;
 
-      final nextPage = currentState.currentPage + 1;
-      final res = await getGallery(
-        page: nextPage,
-        query: event.query,
-      );
+    if (currentState.isLoadMore) return;
 
-      res.fold(
-        (failure) => emit(_FetchGalleryFailure(failure: failure)),
-        (result) {
-          List<GalleryModel> newGallery = [
-            ...currentState.gallery ?? [],
-            ...result.data ?? []
-          ];
-          emit(_FetchGallerySuccess(
-            gallery: newGallery,
-            currentPage: nextPage,
-            hasReachedMax: (result.data ?? []).length < _itemsPerPage,
-            isLoadMore: false,
-          ));
-        },
-      );
-    }
+    emit(currentState.copyWith(isLoadMore: true));
+
+    final nextPage = currentState.currentPage + 1;
+    final res = await getGallery(
+      page: nextPage,
+      query: (event.query ?? '').isNotEmpty ? event.query : null,
+    );
+
+    res.fold(
+      (failure) => emit(_FetchGalleryFailure(failure: failure)),
+      (result) {
+        List<GalleryModel> newGallery = [
+          ...currentState.gallery ?? [],
+          ...result.data ?? []
+        ];
+        emit(_FetchGallerySuccess(
+          gallery: newGallery,
+          currentPage: nextPage,
+          hasReachedMax: (result.data ?? []).length < _itemsPerPage,
+          isLoadMore: false,
+        ));
+      },
+    );
   }
 }
