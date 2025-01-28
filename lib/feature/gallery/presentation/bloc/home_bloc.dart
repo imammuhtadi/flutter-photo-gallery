@@ -44,9 +44,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     final currentState = state;
     if (currentState is! _FetchGallerySuccess) return;
-
     if (currentState.hasReachedMax) return;
-
     if (currentState.isLoadMore) return;
 
     emit(currentState.copyWith(isLoadMore: true));
