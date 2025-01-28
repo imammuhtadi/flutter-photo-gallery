@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:photo_gallery/feature/home/home.dart';
+import 'package:photo_gallery/feature/gallery/gallery.dart';
 
+@RoutePage()
 class GalleryDetailScreen extends StatelessWidget {
   final GalleryModel galleryItem;
 

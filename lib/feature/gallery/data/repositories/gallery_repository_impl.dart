@@ -3,7 +3,7 @@ import 'package:fpdart/fpdart.dart';
 import 'package:photo_gallery/core/core.dart';
 import 'package:photo_gallery/shared/model/failure.dart';
 import 'package:photo_gallery/shared/model/list_response.dart';
-import 'package:photo_gallery/feature/home/home.dart';
+import 'package:photo_gallery/feature/gallery/gallery.dart';
 
 class GalleryRepositoryImpl implements GalleryRepository {
   final dio = AppService.dio;

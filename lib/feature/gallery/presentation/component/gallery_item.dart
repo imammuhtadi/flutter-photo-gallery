@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:photo_gallery/feature/home/home.dart';
+import 'package:photo_gallery/feature/gallery/gallery.dart';
 
 class GalleryItem extends StatelessWidget {
   final GalleryModel? item;
@@ -44,8 +44,8 @@ class GalleryItem extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Colors.black.withOpacity(0),
-                        Colors.black.withOpacity(0.8),
+                        Colors.black.withValues(alpha: 0.0),
+                        Colors.black.withValues(alpha: 0.8),
                       ],
                     ),
                   ),

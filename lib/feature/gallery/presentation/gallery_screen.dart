@@ -3,18 +3,17 @@ import 'dart:async';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:photo_gallery/feature/home/home.dart';
-import 'package:photo_gallery/feature/home/presentation/gallery_detail_screen.dart';
+import 'package:photo_gallery/feature/gallery/gallery.dart';
 
 @RoutePage()
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class GalleryScreen extends StatefulWidget {
+  const GalleryScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<GalleryScreen> createState() => _GalleryScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _GalleryScreenState extends State<GalleryScreen> {
   late HomeBloc homeBloc;
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _searchController = TextEditingController();
@@ -118,6 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       return GalleryItem(
                         item: item,
                         onTap: () {
+                          // AppService.router.push()
                           Navigator.push(
                             context,
                             MaterialPageRoute(

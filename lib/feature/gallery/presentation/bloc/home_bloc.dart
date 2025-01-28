@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:photo_gallery/shared/model/failure.dart';
-import 'package:photo_gallery/feature/home/home.dart';
+import 'package:photo_gallery/feature/gallery/gallery.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
